@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "execute:ts": "tsx -r dotenv/config src/ts/index.ts",
+    "execute:ts": "tsx -r dotenv/config src/index.ts",
     "execute:js": "tsx -r dotenv/config src/js/index.js",
     "getCFaddress": "tsx -r dotenv/config scripts/getCounterfactual.ts",
     "sendETH": "tsx -r dotenv/config scripts/sendEthToSCA.ts"
