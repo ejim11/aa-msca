@@ -1,5 +1,6 @@
 import { smartAccountClient } from "./createSmartAccountClient";
 import { parseEther } from "viem";
+import type { SendUserOperationResult } from "@alchemy/aa-core";
 
 const ADDR = "0x13D3DbabC6a417543cCA179dD2631C6aA3e86b90"; // replace with the adress you want to send SepoliaETH to, unless you want to send ETH to Vitalik :)
 
@@ -10,13 +11,16 @@ const ADDR = "0x13D3DbabC6a417543cCA179dD2631C6aA3e86b90"; // replace with the a
 export async function main() {
   const amountToSend = parseEther("0.0001");
 
-  const result = await smartAccountClient.sendUserOperation({
-    uo: {
-      target: ADDR,
-      data: "0x",
-      value: amountToSend,
-    },
-  });
+  // const balance = await smartAccountClient.getInstalledPlugins({a})
+
+  const result: SendUserOperationResult =
+    await smartAccountClient.sendUserOperation({
+      uo: {
+        target: ADDR,
+        data: "0x",
+        value: amountToSend,
+      },
+    });
 
   console.log("User operation result: ", result);
 
