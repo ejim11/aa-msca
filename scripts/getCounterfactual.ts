@@ -10,7 +10,7 @@ const __dirname = import.meta.url.split("/scripts")[0].split("file://")[1];
 async function main() {
   const signer = smartAccountClient;
 
-  console.log(signer);
+  console.log("smart-account-client", signer);
 
   const counterfactualAddress = await signer.getAddress();
 
